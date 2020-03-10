@@ -1,0 +1,10 @@
+{
+  "name": "tbf",
+  "version": "1.0.0",
+  "main": "index.js",
+  "license": "MIT",
+  "dependencies": {
+    "@types/node": "^13.1.6",
+    "jison-gho": "^0.6.1-216"
+  }
+}

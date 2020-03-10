@@ -1,0 +1,57 @@
+type string = char[];
+type kvp<T, K> = struct {
+    T key;
+    K value;
+};
+
+type e_direction = enum {
+    Left,
+    Right,
+    Forward,
+    Backward
+};
+
+/*type e_tag = enum {
+    A = 1,
+    B = 2,
+};
+*/
+type t_version = struct {
+    int major;
+    int minor;
+};
+
+type t_gps = struct {
+    uint64 timestamp;
+    double longitude;
+    double lattitude;
+};
+
+export type test = struct {
+    t_version version;
+    bool is_active;
+    char[4] typeHeader;
+    string name;
+    t_gps[] points;
+    e_direction dir;
+
+    // on the wire map and kvp arrays the same
+    kvp<char[], int32>[] kvps;
+    // on the wire map and kvp arrays the same
+    map<char[], int64> dict; 
+    
+    // byte = uint8
+    byte[] binaryData;
+    byte[3][][] 2darray;
+
+    struct {
+        int aaa;
+        bool bbb;
+    } ccc;
+
+    enum {
+        A, B
+    } x;
+
+};
+
